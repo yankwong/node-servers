@@ -1,7 +1,7 @@
 var http = require('http'); //build in from Node
 
-var happyPort = 7000; //8080
-var mehPort = 7500; //8080
+const HAPPYPORT = 7000; //8080
+const MEHPORT = 7500; //8080
 
 // you can only "response" only one time
 // response header can only be sent once, otherwise app will blow up
@@ -18,10 +18,10 @@ function handleMehRequest(request, response) {
 var server1 = http.createServer(handleHappyRequest);
 var server2 = http.createServer(handleMehRequest);
 
-server1.listen(happyPort, function(){
-  console.log('I\'m happy!! port num: '+ happyPort);
+server1.listen(HAPPYPORT, function(){
+  console.log('I\'m happy!! port num: '+ HAPPYPORT);
 });
 
-server2.listen(mehPort, function(){
-  console.log('You weak dude, port num: '+ mehPort);
+server2.listen(MEHPORT, function(){
+  console.log('You weak dude, port num: '+ MEHPORT);
 });
